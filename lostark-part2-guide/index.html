@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost Ark Parte 2 · Guía de preparación</title>
+<meta name="description" content="Calculadora de migración de nivel de objeto, checklist previo al parche y reglas de oro para la Parte 2 de Lost Ark.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span class="brand-text">
+        <strong data-i18n="brand.title">Parte 2</strong>
+        <span data-i18n="brand.sub">Guía de preparación</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Secciones">
+      <a href="#calc" data-i18n="nav.calc">Calculadora</a>
+      <a href="#table" data-i18n="nav.table">Tabla</a>
+      <a href="#traps" data-i18n="nav.traps">Trampas</a>
+      <a href="#checklist" data-i18n="nav.checklist">Checklist</a>
+      <a href="#gold" data-i18n="nav.gold">Oro</a>
+      <a href="#rules" data-i18n="nav.rules">Reglas</a>
+      <a href="#thoughts" data-i18n="nav.thoughts">Qué viene</a>
+      <a href="#conclusions" data-i18n="nav.conclusions">Conclusiones</a>
+      <a href="#sources" data-i18n="nav.sources">Fuentes</a>
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang-btn="es" class="is-active" aria-pressed="true">ES</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Aviso oficial · 25 nov 2026</p>
+      <h1 id="hero-title" data-i18n="hero.title">La Parte 2 borra sistemas enteros. Decide antes del mantenimiento.</h1>
+      <p class="hero-lead" data-i18n="hero.lead">El honing pasa a ser por ranura, la calidad desaparece, los accesorios se vuelven libros y el material de Tier 3 se elimina. Esta guía traduce el aviso y te dice qué mover, qué no comprar y qué piezas vale la pena subir antes del parche.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#calc" data-i18n="hero.cta1">Calcular mi pieza</a>
+        <a class="btn btn-ghost" href="#checklist" data-i18n="hero.cta2">Ver checklist</a>
+      </div>
+      <p class="hero-note" data-i18n="hero.note">Sin build, sin conexión y sin cuentas: se abre con doble clic y funciona offline.</p>
+    </div>
+  </section>
+
+  <section class="section" id="calc" aria-labelledby="calc-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="calc.eyebrow">Herramienta</p>
+      <h2 id="calc-title" data-i18n="calc.title">Calculadora de migración</h2>
+      <p class="lead" data-i18n="calc.lead">La conversión es por pieza, no por personaje. Escribe el nivel de objeto de una pieza y mira qué te da el parche, y si el siguiente paso de honing sirve o es dinero perdido.</p>
+    </div>
+
+    <div class="calc-grid">
+      <form class="card calc-form" id="calc-form" novalidate>
+        <label for="ilvl-input" data-i18n="calc.label">Nivel de objeto de la pieza</label>
+        <div class="input-row">
+          <input id="ilvl-input" type="number" inputmode="numeric" min="1" max="2000" step="1" value="1770" autocomplete="off" aria-describedby="calc-hint">
+          <button class="btn btn-primary" type="submit" data-i18n="calc.submit">Calcular</button>
+        </div>
+        <p class="hint" id="calc-hint" data-i18n="calc.hint">Los pasos de honing van de 5 en 5, así que los niveles reales son 1770, 1775, 1780 y así.</p>
+        <p class="presets-label" data-i18n="calc.presetsLabel">Atajos</p>
+        <div class="presets" id="ilvl-presets" role="group" aria-label="Niveles frecuentes"></div>
+      </form>
+
+      <div class="card calc-result" id="calc-result" aria-live="polite">
+        <div class="result-main">
+          <span class="result-label" data-i18n="calc.newIlvl">Nivel nuevo</span>
+          <span class="result-value" id="calc-new">—</span>
+        </div>
+        <dl class="result-stats">
+          <div>
+            <dt data-i18n="calc.gain">Ganancia gratis</dt>
+            <dd id="calc-gain">—</dd>
+          </div>
+          <div>
+            <dt data-i18n="calc.grade">Grado nuevo</dt>
+            <dd id="calc-grade">—</dd>
+          </div>
+          <div>
+            <dt data-i18n="calc.step">Paso de pulido</dt>
+            <dd id="calc-step">—</dd>
+          </div>
+        </dl>
+        <div class="verdict" id="calc-verdict" data-state="idle">
+          <strong id="calc-verdict-title">—</strong>
+          <p id="calc-verdict-body"></p>
+        </div>
+        <p class="next" id="calc-next"></p>
+      </div>
+    </div>
+
+    <p class="footnote" data-i18n="calc.footnote">Umbrales de grado: desde 1775 la pieza nueva sale como Reliquia y desde 1790 como Antiguo.</p>
+  </section>
+
+  <section class="section" id="table" aria-labelledby="table-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="table.eyebrow">Referencia</p>
+      <h2 id="table-title" data-i18n="table.title">Tabla de migración completa</h2>
+      <p class="lead" data-i18n="table.lead">Cada tramo es "mayor que el límite inferior, hasta el límite superior". Busca tu nivel o filtra los tramos donde el honing no suma nada.</p>
+    </div>
+
+    <div class="table-tools">
+      <div class="search-field">
+        <label class="visually-hidden" for="table-search" data-i18n="table.searchLabel">Buscar nivel</label>
+        <input id="table-search" type="search" inputmode="numeric" placeholder="1770" data-i18n-placeholder="table.searchPlaceholder" autocomplete="off">
+      </div>
+      <div class="chips" id="table-filters" role="group" aria-label="Filtros">
+        <button type="button" class="chip is-active" data-filter="all" data-i18n="table.filterAll">Todo</button>
+        <button type="button" class="chip" data-filter="dead" data-i18n="table.filterDead">Zona muerta</button>
+        <button type="button" class="chip" data-filter="lift" data-i18n="table.filterLift">Salto alto</button>
+        <button type="button" class="chip" data-filter="ancient" data-i18n="table.filterAncient">Antiguo</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table" id="migration-table">
+        <caption class="visually-hidden" data-i18n="table.caption">Migración de nivel de objeto por pieza</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="table.colOld">Nivel viejo</th>
+            <th scope="col" data-i18n="table.colNew">Nivel nuevo</th>
+            <th scope="col" data-i18n="table.colLift">Ganancia</th>
+            <th scope="col" data-i18n="table.colGrade">Grado</th>
+            <th scope="col" data-i18n="table.colStep">Paso</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <p class="empty" id="table-empty" hidden data-i18n="table.empty">Ningún tramo coincide con esa búsqueda.</p>
+    </div>
+
+    <div class="table-foot">
+      <p class="legend">
+        <span class="legend-item"><span class="legend-swatch" data-swatch="dead" aria-hidden="true"></span><span data-i18n="table.legendDead">Zona muerta: honear dentro del tramo no suma nivel</span></span>
+        <span class="legend-item"><span class="legend-swatch" data-swatch="lift" aria-hidden="true"></span><span data-i18n="table.legendLift">Salto alto: el escalón regala nivel</span></span>
+      </p>
+      <p class="table-count" id="table-count" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="section" id="traps" aria-labelledby="traps-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="traps.eyebrow">Lo que cuesta oro</p>
+      <h2 id="traps-title" data-i18n="traps.title">Tres trampas de la tabla</h2>
+      <p class="lead" data-i18n="traps.lead">La tabla no es lineal. Hay escalones que regalan nivel y tramos donde honear no mueve nada.</p>
+    </div>
+    <div class="card-grid" id="traps-list"></div>
+  </section>
+
+  <section class="section" id="checklist" aria-labelledby="checklist-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="checklist.eyebrow">Antes del mantenimiento</p>
+      <h2 id="checklist-title" data-i18n="checklist.title">Checklist de cierre</h2>
+      <p class="lead" data-i18n="checklist.lead">Nueve movimientos que no se pueden recuperar después del parche. Se guardan en este navegador.</p>
+    </div>
+
+    <div class="checklist-progress">
+      <div class="progress-track" role="progressbar" aria-labelledby="checklist-progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="checklist-progress-bar">
+        <span class="progress-fill" id="checklist-progress-fill"></span>
+      </div>
+      <span class="progress-label" id="checklist-progress-label">0 / 9</span>
+      <button type="button" class="btn btn-small btn-ghost" id="checklist-reset" data-i18n="checklist.reset">Reiniciar</button>
+    </div>
+
+    <ul class="checklist" id="checklist-list"></ul>
+  </section>
+
+  <section class="section" id="gold" aria-labelledby="gold-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="gold.eyebrow">Economía</p>
+      <h2 id="gold-title" data-i18n="gold.title">¿Guardar oro o invertirlo?</h2>
+      <p class="lead" data-i18n="gold.lead">El oro sobrevive al parche. Casi todo lo demás se convierte, se borra o pierde valor. La regla es simple: no conviertas oro en activos con fecha de vencimiento.</p>
+    </div>
+
+    <div class="tabs" id="gold-tabs" role="tablist" aria-label="Categorías">
+      <button type="button" role="tab" class="tab is-active" data-gold-tab="avoid" aria-selected="true" data-i18n="gold.tabAvoid">No comprar</button>
+      <button type="button" role="tab" class="tab" data-gold-tab="keep" aria-selected="false" data-i18n="gold.tabKeep">Conservar</button>
+      <button type="button" role="tab" class="tab" data-gold-tab="liquid" aria-selected="false" data-i18n="gold.tabLiquid">Convertir y vender</button>
+    </div>
+
+    <div class="card-grid" id="gold-grid"></div>
+  </section>
+
+  <section class="section" id="rules" aria-labelledby="rules-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="rules.eyebrow">Detalle</p>
+      <h2 id="rules-title" data-i18n="rules.title">Qué pasa con cada sistema</h2>
+      <p class="lead" data-i18n="rules.lead">Doce bloques con lo que se elimina, lo que se convierte y lo que se reembolsa.</p>
+    </div>
+    <div class="accordion" id="rules-list"></div>
+  </section>
+
+  <section class="section" id="thoughts" aria-labelledby="thoughts-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="thoughts.eyebrow">Hoja de ruta y comunidad</p>
+      <h2 id="thoughts-title" data-i18n="thoughts.title">¿Qué viene después?</h2>
+      <p class="lead" data-i18n="thoughts.lead">Resumen de los anuncios del director Lee Byung-tak, el directo State of the Game 2026 (Parte 2) y los cambios previstos rumbo al Winter LOA ON del 19 de diciembre.</p>
+    </div>
+    <div class="card-grid thoughts-grid" id="thoughts-list"></div>
+  </section>
+
+  <section class="section" id="conclusions" aria-labelledby="conclusions-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="conclusions.eyebrow">Lectura y balance</p>
+      <h2 id="conclusions-title" data-i18n="conclusions.title">A qué se llega y conclusiones</h2>
+      <p class="lead" data-i18n="conclusions.lead">Qué explica un giro tan drástico en 2026, hacia dónde apunta la Parte 2 y qué conviene concluir según tu forma de jugar.</p>
+    </div>
+
+    <div class="conclusions-block">
+      <h3 class="subsection-title" data-i18n="conclusions.synthesisTitle">Lectura general: por qué ocurre y a qué se llega</h3>
+      <div class="card-grid synthesis-grid" id="conclusions-synthesis"></div>
+    </div>
+
+    <div class="conclusions-block">
+      <h3 class="subsection-title" data-i18n="conclusions.takeawaysTitle">Conclusiones por perfil de jugador</h3>
+      <div class="card-grid takeaways-grid" id="conclusions-takeaways"></div>
+    </div>
+  </section>
+
+  <section class="section" id="sources" aria-labelledby="sources-title">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="sources.eyebrow">Trazabilidad</p>
+      <h2 id="sources-title" data-i18n="sources.title">Fuentes y contexto</h2>
+    </div>
+    <div class="card source-card">
+      <p data-i18n="sources.body">Las cifras de la tabla, los ratios de conversión y las reglas de sistemas salen del aviso oficial de reestructuración de la Parte 2 (Notice 13608, 25 de noviembre de 2026). El apartado de hoja de ruta y conclusiones cruza ese aviso con el resumen del directo KR State of the Game 2026 (Maxroll), comunicados de feedback de la versión occidental (playlostark.com) y análisis de estado del juego de 2026.</p>
+      <ul class="source-links">
+        <li>
+          <a class="source-link" href="https://lostark.game.onstove.com/News/Notice/Views/13608" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="sources.linkLabel">Aviso oficial · Notice 13608</span> <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="source-link" href="https://maxroll.gg/lost-ark/news/kr-state-of-the-game-2026-part-2-stream-summary" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="sources.contextLabel">Resumen KR State of the Game (Part 2) · Maxroll</span> <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="source-link" href="https://www.playlostark.com/en-us/news/articles/addressing-community-feedback-anticipated-changes" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="sources.feedbackLabel">Cambios y feedback occidental · playlostark.com</span> <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+      <p class="hint" data-i18n="sources.disclaimer">El aviso no publica la fecha exacta del mantenimiento: confírmala en la web oficial. Esta guía es un proyecto local sin relación con Smilegate.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p><span data-i18n="footer.built">Proyecto local de estudio</span> · <span data-i18n="footer.updated">Actualizado</span> 25/11/2026</p>
+  <p class="footer-fine" data-i18n="footer.fine">Lost Ark es una marca de Smilegate. Esta página no está afiliada ni patrocinada por Smilegate.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
